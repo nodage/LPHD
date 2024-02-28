@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+    <head>
+        <title>LPHD</title>
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <link 
+            rel="stylesheet" 
+            href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+            integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+            crossorigin=""
+        />
+        <script 
+            src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+            crossorigin="">
+        </script>
+        <link type="text/css" rel="stylesheet" href="LPHD.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:700|Cinzel:700|Raleway:400,400i&amp;subset=latin-ext" rel="stylesheet">
+    </head>
+
+    <body id = "page-body" >
+        <div class = "title-block pagetitle"><h1>LPHD: Variants Visualization</h1></div>
+        <div id="settings" class="query-block" >
+            <div id="var_setting">
+                <label for="var"><b>Choose your variant to see its distribution:</b></label>
+                <input type="text" id="var" list="varlist">
+                <label for="vartype">with all diacritic options</label>
+                <input type="radio" value="vartype" id="vartype">
+                <label for="varchange">only with specified diacritic options</label>
+                <input type="radio" value="varchange" id="varchange">
+                <button id="QuerySubmitButton" class="submitbutton">Visualization</button>
+            </div>
+            <div id="query_title">
+                <br>
+                <b>Distribution of <span id="searched_value">papyri</span>'s locations in <span id="searched_century">all centuries</span> (total: <span id="searched_total"></span>).</b>
+            </div>
+
+            <!--<input type="range" id="century_select" min="1" list="centuries_list" max="35" step="1">
+            <datalist-->
+        </div>
+        <div id= "main" class="only_map">
+            <div id="LPHDmap"></div>
+        </div>
+            
+
+        <script language="javascript" type="text/javascript" src="index.js"></script>
+    </body>
+</html>
